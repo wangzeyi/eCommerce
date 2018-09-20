@@ -13,7 +13,7 @@ import com.example.wang_.ecommerce.main.IView;
 public class MainActivity extends AppCompatActivity implements IView {
 
     EditText txt_Name, txt_Mobile;
-    Button button_Register;
+    Button button_Register, button_Login;
     IPresenter presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements IView {
         txt_Mobile = findViewById(R.id.editText_mobile);
 
         button_Register = findViewById(R.id.button_register);
+        button_Login = findViewById(R.id.button_login);
 
         presenter = new Presenter(MainActivity.this);
 

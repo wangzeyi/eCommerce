@@ -1,14 +1,12 @@
-package com.example.wang_.ecommerce.data;
+package com.example.wang_.ecommerce.data.database;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.wang_.ecommerce.data.database.Contract;
-import com.example.wang_.ecommerce.data.database.ECommerceDB;
+import com.example.wang_.ecommerce.data.IDataManager;
 
-public class DBHelper implements IDBHelper{
+public class DBHelper implements IDBHelper {
 
     ECommerceDB eCommerceDB;
     SQLiteDatabase sqLiteDatabase;
@@ -20,7 +18,7 @@ public class DBHelper implements IDBHelper{
 
 
     @Override
-    public void saveRegister(String name, String mobile, IDataManager.onResponseListener listener) {
+    public void Register(String name, String mobile, IDataManager.onResponseListener listener) {
         ContentValues values = new ContentValues();
         values.put(Contract.ContractRegister.COLUMN_NAME_NAME, name);
         values.put(Contract.ContractRegister.COLUMN_NAME_MOBILE, mobile);

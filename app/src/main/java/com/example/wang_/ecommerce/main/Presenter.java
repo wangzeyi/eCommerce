@@ -6,15 +6,17 @@ import android.view.View;
 import com.example.wang_.ecommerce.R;
 import com.example.wang_.ecommerce.data.DataManager;
 import com.example.wang_.ecommerce.data.IDataManager;
+import com.example.wang_.ecommerce.utils.AppController;
 
 public class Presenter implements IPresenter, IDataManager.onResponseListener{
 
     IView view;
     IDataManager dataManager;
+    String url_register = "http://rjtmobile.com/aamir/e-commerce/android-app/shop_reg.php";
 
     public Presenter(MainActivity mainActivity) {
         this.view = mainActivity;
-        dataManager = new DataManager(mainActivity);
+        dataManager = new DataManager(mainActivity, url_register);
     }
 
     @Override
@@ -23,6 +25,8 @@ public class Presenter implements IPresenter, IDataManager.onResponseListener{
             case R.id.button_register:
                 //view.showLog("hi");
                 view.passRegister();
+                break;
+            case R.id.button_login:
 
                 break;
             default:
@@ -32,7 +36,7 @@ public class Presenter implements IPresenter, IDataManager.onResponseListener{
 
     @Override
     public void passRegister(String name, String mobile) {
-        dataManager.saveRegister(name, mobile, this);
+        dataManager.Register(name, mobile, this);
         //Log.d("MyTag", name+ " "+mobile);
     }
 

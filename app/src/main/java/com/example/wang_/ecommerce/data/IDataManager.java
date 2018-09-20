@@ -1,6 +1,8 @@
 package com.example.wang_.ecommerce.data;
 
-public interface IDataManager extends IDBHelper{
+import com.example.wang_.ecommerce.data.database.IDBHelper;
+
+public interface IDataManager extends IDBHelper {
     //void saveRegister(String name, String mobile);
 
     interface onResponseListener{
